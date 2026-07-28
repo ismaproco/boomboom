@@ -10,6 +10,14 @@ import { PortfolioOptimizeRunner } from './portfolioOptimizeRunner'
 let testDir = ''
 let store: SqliteStore
 
+const createTestConfig = () => ({
+  ...createConfig(),
+  // These tests exercise admission and conflict behavior, not job execution.
+  // Keeping execution external prevents a background pump from outliving the
+  // per-test SQLite store on faster CI runners.
+  optimizeExecutor: 'external' as const,
+})
+
 beforeEach(() => {
   testDir = mkdtempSync(join(tmpdir(), 'boomboom-opt-'))
   store = new SqliteStore(join(testDir, 'opt.sqlite'), testDir)
@@ -23,7 +31,7 @@ afterEach(() => {
 
 describe('PortfolioOptimizeRunner', () => {
   test('enqueue returns null when not accepting jobs', () => {
-    const config = createConfig()
+    const config = createTestConfig()
     const fetcher = createTimeoutFetcher(config.fetchTimeoutMs)
     const runner = new PortfolioOptimizeRunner(store, { fetchLiveTickers: async () => [], fetchLiveNews: async () => [] }, fetcher, config)
     runner.stopAcceptingJobs()
@@ -32,7 +40,7 @@ describe('PortfolioOptimizeRunner', () => {
   })
 
   test('enqueue returns null when scenario already has active job', () => {
-    const config = createConfig()
+    const config = createTestConfig()
     const fetcher = createTimeoutFetcher(config.fetchTimeoutMs)
     const runner = new PortfolioOptimizeRunner(store, { fetchLiveTickers: async () => [], fetchLiveNews: async () => [] }, fetcher, config)
     const scenarioId = store.insertPortfolioScenario({
