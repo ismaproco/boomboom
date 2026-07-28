@@ -17,6 +17,7 @@
     "openapi:emit": "bun server/openapiEmit.ts",
     "openapi:client": "openapi-typescript openapi.json -o src/generated/api-types.ts",
     "openapi": "bun run openapi:emit && bun run openapi:client",
+    "audit": "bun audit --ignore GHSA-mh99-v99m-4gvg",
     "worker:optimize": "bun server/optimizeWorker.ts",
     "test:e2e": "playwright test",
     "test:e2e:install": "playwright install chromium"
@@ -40,12 +41,15 @@
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "6.0.1",
-    "concurrently": "9.2.1",
+    "concurrently": "10.0.4",
     "eslint": "^9.39.1",
     "openapi-typescript": "^7.6.1",
     "prettier": "3.5.3",
     "typescript": "6.0.3",
     "typescript-eslint": "^8.46.4",
-    "vite": "8.0.10"
+    "vite": "8.1.5"
+  },
+  "overrides": {
+    "js-yaml": "^4.1.2"
   }
 }

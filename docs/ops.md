@@ -91,6 +91,11 @@ Do **not** run embedded and external executors against the same database.
 - Use `HOST=127.0.0.1` in compose or `bun run start` when only this machine needs the UI.
 - Leave `ENABLE_CORS` and `ENABLE_SWAGGER` unset in production unless you intend cross-origin or public API docs.
 - Schedule SQLite backups (cron + `scripts/backup-sqlite.sh`; see [Automated backup](#automated-backup-cron) above).
-- After dependency bumps: `bun audit` (CI runs this on push).
+- After dependency bumps: run `bun audit` to review the complete report and
+  `bun run audit` to apply the CI policy. CI temporarily ignores
+  `GHSA-mh99-v99m-4gvg`: the affected `brace-expansion` versions are reachable
+  only through lint/OpenAPI build tooling, which receives repository-owned
+  patterns rather than user input. Remove the exception when the upstream
+  `minimatch` consumers accept the patched major version.
 
 Docker Compose sets `mem_limit: 2g` and `cpus: 2` as a homelab guardrail; tune for your host.
