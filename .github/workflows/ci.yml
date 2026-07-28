@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  test-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.4
+      - run: bun install --frozen-lockfile
+      - run: bun test
+      - run: bun run lint
+      - run: bun run format:check
+      - run: bun run build
+      - run: bun run openapi:emit
+      - run: bun run openapi:client
+      - run: git diff --exit-code openapi.json src/generated/api-types.ts || (echo "Regenerate OpenAPI artifacts" && exit 1)
+      - run: bun audit
+      - run: bun run test:e2e:install
+      - run: |
+          DATA_DIR=/tmp/boomboom-e2e SQLITE_PATH=/tmp/boomboom-e2e/e2e.sqlite bun run start &
+          for i in $(seq 1 60); do curl -sf http://127.0.0.1:3210/api/health && break; sleep 1; done
+      - run: bun run test:e2e

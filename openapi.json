@@ -1,0 +1,363 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "BoomBoom News API",
+    "description": "Development documentation",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/health": {
+      "get": {
+        "operationId": "getApiHealth",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/top-news": {
+      "get": {
+        "operationId": "getApiTop-news",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/tickers": {
+      "get": {
+        "operationId": "getApiTickers",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/commodities": {
+      "get": {
+        "operationId": "getApiCommodities",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/commodities/refresh": {
+      "post": {
+        "operationId": "postApiCommoditiesRefresh",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/commodities/history": {
+      "get": {
+        "operationId": "getApiCommoditiesHistory",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/commodities/snapshots": {
+      "get": {
+        "operationId": "getApiCommoditiesSnapshots",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/ticker-history/status": {
+      "get": {
+        "operationId": "getApiTicker-historyStatus",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/ticker-history/sync": {
+      "post": {
+        "operationId": "postApiTicker-historySync",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/market-signals": {
+      "get": {
+        "operationId": "getApiMarket-signals",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/articles": {
+      "get": {
+        "operationId": "getApiArticles",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/data-centers": {
+      "get": {
+        "operationId": "getApiData-centers",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/popular": {
+      "get": {
+        "operationId": "getApiPopular",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/popular/ensure": {
+      "post": {
+        "operationId": "postApiPopularEnsure",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/popular/snapshots": {
+      "get": {
+        "operationId": "getApiPopularSnapshots",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/popular/{snapshotId}": {
+      "get": {
+        "operationId": "getApiPopularBySnapshotId",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "name": "snapshotId",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/portfolio-scenarios": {
+      "get": {
+        "operationId": "getApiPortfolio-scenarios",
+        "responses": {
+          "200": {}
+        }
+      },
+      "post": {
+        "operationId": "postApiPortfolio-scenarios",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/portfolio-scenarios/{id}": {
+      "patch": {
+        "operationId": "patchApiPortfolio-scenariosById",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {}
+        }
+      },
+      "delete": {
+        "operationId": "deleteApiPortfolio-scenariosById",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/portfolios": {
+      "get": {
+        "operationId": "getApiPortfolios",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/portfolios/history": {
+      "get": {
+        "operationId": "getApiPortfoliosHistory",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/portfolios/signal-calibration": {
+      "get": {
+        "operationId": "getApiPortfoliosSignal-calibration",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/portfolios/comparison": {
+      "get": {
+        "operationId": "getApiPortfoliosComparison",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/portfolio-decisions": {
+      "get": {
+        "operationId": "getApiPortfolio-decisions",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/portfolio-decisions/latest": {
+      "get": {
+        "operationId": "getApiPortfolio-decisionsLatest",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/portfolio-decisions/runs": {
+      "get": {
+        "operationId": "getApiPortfolio-decisionsRuns",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/portfolio-decisions/survivors": {
+      "get": {
+        "operationId": "getApiPortfolio-decisionsSurvivors",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/portfolio-decisions/bracket": {
+      "get": {
+        "operationId": "getApiPortfolio-decisionsBracket",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/portfolio-decisions/finalize": {
+      "post": {
+        "operationId": "postApiPortfolio-decisionsFinalize",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/optimized-portfolios": {
+      "get": {
+        "operationId": "getApiOptimized-portfolios",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/optimized-portfolios/comparison": {
+      "get": {
+        "operationId": "getApiOptimized-portfoliosComparison",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/portfolios/backtest": {
+      "post": {
+        "operationId": "postApiPortfoliosBacktest",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/portfolios/backtest/{runId}": {
+      "get": {
+        "operationId": "getApiPortfoliosBacktestByRunId",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "name": "runId",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/portfolios/candidates": {
+      "get": {
+        "operationId": "getApiPortfoliosCandidates",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/portfolios/optimize-jobs": {
+      "post": {
+        "operationId": "postApiPortfoliosOptimize-jobs",
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/portfolios/optimize-jobs/{id}": {
+      "get": {
+        "operationId": "getApiPortfoliosOptimize-jobsById",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/api/refresh-log": {
+      "get": {
+        "operationId": "getApiRefresh-log",
+        "responses": {
+          "200": {}
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}

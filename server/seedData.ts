@@ -1,0 +1,49 @@
+import type { NewsStory, Ticker } from './types'
+
+export const topNews: NewsStory[] = [
+  {
+    id: 1,
+    section: 'Markets',
+    headline: 'Stocks Swing as Traders Weigh Fresh Inflation Signals',
+    summary:
+      'Equities struggled for direction while bond yields edged higher after new data reinforced the case for a slower rate-cut path.',
+    source: 'Global Markets Desk',
+    time: '2 min ago',
+    impact: 'High',
+  },
+  {
+    id: 2,
+    section: 'Technology',
+    headline: 'Chip Suppliers Rally on Record AI Infrastructure Orders',
+    summary: 'Server demand and custom silicon contracts are lifting expectations across the semiconductor supply chain.',
+    source: 'Tech Strategy',
+    time: '12 min ago',
+    impact: 'High',
+  },
+  {
+    id: 3,
+    section: 'Policy',
+    headline: 'Central Bank Officials Signal Patience Before Next Move',
+    summary: 'Speakers emphasized data dependence and warned that services prices remain too persistent to declare victory.',
+    source: 'Economics Wire',
+    time: '21 min ago',
+    impact: 'Medium',
+  },
+  {
+    id: 4,
+    section: 'Deals',
+    headline: 'Private Credit Funds Circle $18 Billion Telecom Refinancing',
+    summary: "Lenders are competing for one of the year's largest refinancing mandates as banks pull back from riskier debt.",
+    source: 'Capital Markets',
+    time: '38 min ago',
+    impact: 'Medium',
+  },
+]
+
+export const tickers: Ticker[] = [
+  { symbol: 'S&P 500', value: '5,209.91', change: '+0.18%' },
+  { symbol: 'Nasdaq', value: '16,342.12', change: '+0.42%' },
+  { symbol: 'UST 10Y', value: '4.61%', change: '+4 bps' },
+  { symbol: 'Brent', value: '$88.17', change: '-0.31%' },
+  { symbol: 'BTC', value: '$67,840', change: '+1.22%' },
+]
